@@ -2,8 +2,31 @@
 // Project: boxmov 
 // Created: 2019-09-07
 
+REMSTART
+TODO
+[v] Colors
+[v] Timer
+[v] Round shapes
+[v] Progressively harder levels
+[v] Freeze-frame
+[v] Html-export
+[v] Planning enemies
+		wide one
+		fast
+		slow
+		big
+[v] Avoid starting inside enemies
+[v] Tint at front
+[v] Main menu with description and logo
+[v] Itch io settings
+[v] gameover if touching edge frame (immobile sprites)
+[ ] figure out the problem with the lack of mouse cursor
+REMEND
+
 #include "includes/init.agc"
 gosub _init
+#include "includes/title.agc"
+gosub _title
 #include "includes/menu.agc"
 gosub _menu
 #include "includes/play.agc"
@@ -13,16 +36,20 @@ gosub _hero
 #include "includes/foes.agc"
 gosub _foes
 
-global currentFrameTime# as float
-global deltaTime# as float
-global lastFrameTime# as float
+currentFrameTime# as float
+lastFrameTime# as float
 lastFrameTime# = Timer()
+global deltaTime# as float
+
 do
 	currentFrameTime# = Timer()											REM remember the time
 	deltaTime# = currentFrameTime# - lastFrameTime#	REM set the deltaTime to how much time has passed, in fractions of a second
 	lastFrameTime# = currentFrameTime#							REM store the current time for use in the next cycle
 	
 	select gameState
+		case GAMESTATE_TITLE:
+			title()
+		endcase
 		case GAMESTATE_MENU:
 			menu()
 		endcase
@@ -30,6 +57,7 @@ do
 			play()
 		endcase
 	endselect
-
+	
+	sync()
 
 loop

@@ -5,15 +5,19 @@ _init:
 
 	#constant TRUE	1
 	#constant FALSE	0
+
+	#constant GAMESTATE_TITLE	0	
+	#constant GAMESTATE_MENU	1
+	#constant GAMESTATE_PLAY	2
 	
-	#constant GAMESTATE_MENU	0
-	#constant GAMESTATE_PLAY	1
-	
-	#constant ARENA_WIDTH			800
-	#constant ARENA_HEIGHT		800
+	#constant ARENA_WIDTH			640
+	#constant ARENA_HEIGHT		480
 	
 	global gameState as Integer
-	gameState = GAMESTATE_MENU
+	gameState = GAMESTATE_TITLE
+	
+	SetPrintColor(128, 200, 100, 255)
+	setPrintSize(22.0)
 
 
 	SetErrorMode(2)					rem 2 = show all errors
@@ -21,15 +25,19 @@ _init:
 	// set window properties
 	SetWindowTitle( "boxmov" )
 	SetWindowSize( ARENA_WIDTH, ARENA_HEIGHT, 0 )
-	SetWindowAllowResize( 1 ) // allow the user to resize the window
+	SetWindowAllowResize( FALSE ) // allow the user to resize the window
 
 	// Display properties
 	SetVirtualResolution( ARENA_WIDTH, ARENA_HEIGHT ) // doesn't have to match the window
 	SetOrientationAllowed( 1, 1, 1, 1 ) // allow both portrait and landscape on mobile devices
 	setVsync(TRUE)
-	SetScissor( 0,0,0,0 ) // use the maximum available screen space, no black borders
+	SetScissor( 0,0,0,0 ) 		rem use the maximum available screen space, no black borders
 	UseNewDefaultFonts(TRUE)
-	SetAntialiasMode( TRUE )		//  0=off, 1=4xMSAA
-
+	SetAntialiasMode( FALSE )	rem  0=off, 1=4xMSAA
+	
+	SetDefaultMagFilter( 0 )	rem 0=nearest, 1=linear
+	SetDefaultMinFilter( 0 )	rem 0=nearest, 1=linear
+	
+	SetClearColor(60,50,40)
 
 return

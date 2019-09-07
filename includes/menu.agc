@@ -3,25 +3,64 @@ _menu:
 
 
 	rem todo build menu, then hide
+	
+	global tintSID as integer
+	tintSID = createSprite(0)
+  setSpriteColor(tintSID, 255, 0, 0, 70)
+  setSPriteSize(tintSID, ARENA_WIDTH, ARENA_HEIGHT)
+  SetSpritePosition (tintSID, 0, 0)
+	setSpriteVisible(tintSID, TRUE)
+	setSpriteDepth(tintSID, 10)
+	setSpriteVisible (tintSID, FALSE)
+	
+	Global playIMG as integer
+	playIMG = loadiMage("play.png")
+	
+	Global playhIMG as integer
+	playhIMG = loadiMage("play_h.png")
+	
 
+	
+	global playSID as integer
+	playSID = createSprite(playIMG)
+	SetSpriteSnap ( playSID, TRUE ) 
+	setSpritePosition (playSID, ARENA_WIDTH*0.5-getSpriteWidth(playSID)*0.5, ARENA_HEIGHT*0.5-getSpriteHeight(playSID)*0.5)
+	
+	
 return
 
 
 function menu()
 	
+	print(chr(10) + "     TIME: " + str(stopWatch#,0) + " seconds")
+	
 	REM todo show pretty menu
+
+	rem print("click to begin")
 	
-do
-	print("click to begin")
-	
-	if GetPointerPressed() = TRUE
-		gameState = GAMESTATE_PLAY
-		exit
-	endif
-	
-	sync()
-loop
+	rem if GetPointerPressed() = TRUE
+	rem	play_init()
+	rem	gameState = GAMESTATE_PLAY
+	rem endif
+	menu_play()
 
 	REM todo hide pretty menu
+	
+endfunction
+
+function menu_play()
+	
+	if GetSpriteHit( getPointerX(), getPointerY() ) = playSID
+		setSpriteImage(playSID, playhIMG, FALSE)
+		if GetRawMouseLeftPressed() = TRUE
+			SetSpriteVisible(titleSID, FALSE)
+			SetSpriteVisible(playSID, FALSE)
+			SetSpriteVisible(tintSID, FALSE)
+			play_init()
+			gameState = GAMESTATE_PLAY
+		endif
+	else
+		setSpriteImage(playSID, playIMG, FALSE)
+	endif
 	
 endfunction
