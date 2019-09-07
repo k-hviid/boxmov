@@ -55,9 +55,12 @@ FILE_4=includes%2Fhero.agc;-1
 FILE_5=includes%2Ffoes.agc;-1
 
 [files]
-FILE_NAME_0=0;main.agc;262;0
-FILE_NAME_1=1;includes%2Finit.agc;623;1
-FILE_NAME_2=0;includes%2Fmenu.agc;24;2
-FILE_NAME_3=0;includes%2Fplay.agc;22;3
-FILE_NAME_4=0;includes%2Fhero.agc;22;4
-FILE_NAME_5=0;includes%2Ffoes.agc;22;5
+FILE_NAME_0=0;main.agc;308;0
+FILE_NAME_1=0;includes%2Finit.agc;102;1
+FILE_NAME_2=0;includes%2Fmenu.agc;140;2
+FILE_NAME_3=0;includes%2Fplay.agc;41;3
+FILE_NAME_4=0;includes%2Fhero.agc;186;4
+FILE_NAME_5=1;includes%2Ffoes.agc;701;5
+
+[project]
+description=
