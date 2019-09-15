@@ -1,6 +1,6 @@
 
 _play:
-	Global border as integer = 9
+	Global border as integer = 12
 
 	Global gameOver as integer
 	gameOver = FALSE
@@ -52,7 +52,7 @@ function play_init()
 	foe_create(FOETYPE_CIRCLE,	100,	150,	200.0,	370.2,	60,		60,			128,	200,	100)			rem  3	circle
 	foe_create(FOETYPE_BOX,			300,	border,		600.0,		0.0,	70,		70,			128,	200,	100)			rem  4	GUARD
 	
-
+	rem walls
 	foe_create(FOETYPE_BOX,			0,		0,		0.0,			0.0,	ARENA_WIDTH,	border,		128,	200,	100)			rem  5	TOP
 	foe_create(FOETYPE_BOX,			0,		ARENA_HEIGHT-border,		0.0,			0.0,	ARENA_WIDTH,	border,		128,	200,	100)			rem  5	BOTTOM
 	foe_create(FOETYPE_BOX,			0,		border,		0.0,		0.0,		border,	ARENA_HEIGHT-(2*border),		128,	200,	100)			rem  5	LEFT
@@ -61,6 +61,7 @@ function play_init()
 	
 	
 	skullSID = CreateSprite(skullIMG)
+	setSpriteSize(skullSID, 24,24)
 	setSpriteColor(skullSID, 255, 0, 0, 255)
 	//setSpriteColor(skullSID, 128, 200, 100, 255)
 	//setSPriteSize(skullSID, 16, 16)
@@ -86,7 +87,7 @@ function play_exit()
 	SetRawMouseVisible( 1 )
 	                                         
 	//setSpritePosition(skullSID, getpointerX()+getspriteWidth(skullSID*0.5), getPointerY()+getspriteHeight(skullSID*0.5))
-	setSpritePosition(skullSID, getpointerX()+4, getPointerY()+6)
+	setSpritePosition(skullSID, getpointerX()-(getSpriteWidth(skullSID)*0.5), getPointerY()-(getSpriteHeight(skullSID)*0.5))
 
 	
 endfunction

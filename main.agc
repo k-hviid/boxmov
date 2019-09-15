@@ -36,10 +36,7 @@ gosub _hero
 #include "includes/foes.agc"
 gosub _foes
 
-currentFrameTime# as float
-lastFrameTime# as float
-lastFrameTime# = Timer()
-global deltaTime# as float
+
 
 do
 	currentFrameTime# = Timer()											REM remember the time
@@ -48,7 +45,7 @@ do
 	
 	select gameState
 		case GAMESTATE_TITLE:
-			title()
+			menu_play()
 		endcase
 		case GAMESTATE_MENU:
 			menu()

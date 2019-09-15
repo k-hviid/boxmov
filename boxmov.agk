@@ -43,7 +43,7 @@ firebase_config_path=
 
 [html5_settings]
 commands_used=0
-dynamic_memory=1
+dynamic_memory=0
 output_path=C:\\Users\\Jupiter\\Documents\\GitHub\\boxmov\\HTML5
 
 [projectfiles]
@@ -56,13 +56,13 @@ FILE_5=includes%2Ffoes.agc;-1
 FILE_6=includes%2Ftitle.agc;-1
 
 [files]
-FILE_NAME_0=0;main.agc;1131;0
-FILE_NAME_1=0;includes%2Finit.agc;161;1
-FILE_NAME_2=0;includes%2Fmenu.agc;313;2
-FILE_NAME_3=0;includes%2Fplay.agc;227;3
-FILE_NAME_4=0;includes%2Fhero.agc;27;4
-FILE_NAME_5=0;includes%2Ffoes.agc;324;5
-FILE_NAME_6=1;includes%2Ftitle.agc;0;6
+FILE_NAME_0=0;main.agc;155;0
+FILE_NAME_1=1;includes%2Finit.agc;103;1
+FILE_NAME_2=0;includes%2Fmenu.agc;486;2
+FILE_NAME_3=0;includes%2Fplay.agc;2034;3
+FILE_NAME_4=0;includes%2Fhero.agc;133;4
+FILE_NAME_5=0;includes%2Ffoes.agc;3762;5
+FILE_NAME_6=0;includes%2Ftitle.agc;63;6
 
 [project]
 description=

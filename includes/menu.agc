@@ -1,8 +1,5 @@
 
 _menu:
-
-
-	rem todo build menu, then hide
 	
 	global tintSID as integer
 	tintSID = createSprite(0)
@@ -12,6 +9,7 @@ _menu:
 	setSpriteVisible(tintSID, TRUE)
 	setSpriteDepth(tintSID, 10)
 	setSpriteVisible (tintSID, FALSE)
+	SetSpriteTransparency( tintSID, 1 ) //  0=off, 1=alpha transparency, 2=additive blending
 	
 	Global playIMG as integer
 	playIMG = loadiMage("play.png")
@@ -23,9 +21,10 @@ _menu:
 	
 	global playSID as integer
 	playSID = createSprite(playIMG)
-	SetSpriteSnap ( playSID, TRUE ) 
+	setSpriteSize(playSID, 93, 41)
+	SetSpriteSnap ( playSID, TRUE )
 	setSpritePosition (playSID, ARENA_WIDTH*0.5-getSpriteWidth(playSID)*0.5, ARENA_HEIGHT*0.5-getSpriteHeight(playSID)*0.5)
-	
+
 	
 return
 

@@ -95,8 +95,8 @@ function foe_update ()
 		rem move hero
 		heroPosX as float
 		heroPosY as float
-		heroPosX = getRawMouseX()+5
-		heroPosY = getRawMouseY()+7
+		heroPosX = getRawMouseX()+3
+		heroPosY = getRawMouseY()+8
 		
 		if heroPosX < 0.0 then heroPosX = border*0.5
 		if heroPosX > ARENA_WIDTH then heroPosX = ARENA_WIDTH-getSpriteWidth(heroSID)

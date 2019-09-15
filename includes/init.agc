@@ -13,21 +13,20 @@ _init:
 	#constant ARENA_WIDTH			640
 	#constant ARENA_HEIGHT		480
 	
+	SetErrorMode(2)					rem 2 = show all errors
+	
 	global gameState as Integer
 	gameState = GAMESTATE_TITLE
 	
 	SetPrintColor(128, 200, 100, 255)
 	setPrintSize(22.0)
 
-
-	SetErrorMode(2)					rem 2 = show all errors
-
-	// set window properties
+	rem SET WINDOW PROPERTIES
 	SetWindowTitle( "boxmov" )
 	SetWindowSize( ARENA_WIDTH, ARENA_HEIGHT, 0 )
 	SetWindowAllowResize( FALSE ) // allow the user to resize the window
 
-	// Display properties
+	rem DISPLAY PROPERTIES
 	SetVirtualResolution( ARENA_WIDTH, ARENA_HEIGHT ) // doesn't have to match the window
 	SetOrientationAllowed( 1, 1, 1, 1 ) // allow both portrait and landscape on mobile devices
 	setVsync(TRUE)
@@ -39,5 +38,14 @@ _init:
 	SetDefaultMinFilter( 0 )	rem 0=nearest, 1=linear
 	
 	SetClearColor(60,50,40)
+	
+	rem ==========================================================================================
+	rem TIMING
+	rem ==========================================================================================
+	
+	currentFrameTime# as float
+	lastFrameTime# as float
+	lastFrameTime# = Timer()
+	global deltaTime# as float
 
 return
